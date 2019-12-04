@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Resume - 
+{% endblock %}
+
+{% block header %}
+  <h1>Resume</h1>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h2>You can view or download my resume below.</h2>
+		<h2>For a bit more detail, you can visit my <a href="http://www.linkedin.com/in/tracetidwell">LinkedIn</a> page.</h2>
+		<h2>Or for a look at my projects, you can view my <a href="http://www.github.com/tracetidwell">Github</a> repo.</h2>
+	    <p>
+	      <embed src="{{ url_for('.static', filename='about_me/resume/Resume_Trace_Tidwell.pdf') }}" width="800px", height="1050px" />
+	    </p>
+	</div>
+{% endblock %}

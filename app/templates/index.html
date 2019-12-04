@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block css %}
+	<style>
+
+		.col-lg-4 {
+			vertical-align: middle;
+		}
+
+		.thumbnail {
+			position: relative;
+		}
+
+		.thumbnail img {
+			margin: 0;
+   			position: absolute;
+   			top: 50%;                        
+   			transform: translate(0, -50%)
+		}
+
+	</style>
+
+{% endblock %}
+
+{% block header %}
+
+	<div class="jumbotron">
+		<h1>Welcome to Charitable Giving</h1>
+		<p>We are a thrift store whose entire inventory is made up donated items. You can browse all of our in-stock items, or you can search for items
+			by typing a keyword into the search box below. If you would like to make a donation, please come visit us at 789 Giving St., Anytown, GA 12345.</p>
+	</div>
+
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+
+		<form id="submit-labels" method="POST">
+  	    <div class="form-group">
+  		  <label for="input">Search for items by category</label>
+  		  <input type="text" class="form-control" id="input" name="input">
+  		  <input name="labels" type="submit">
+  	    </div>
+  	  </form>
+
+	  	<h2>{{title}}</h2>
+
+		<div class="row">
+		{% for filename in filenames %}
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<img src="{{ url_for('.static', filename='inventory/{}'.format(filename[0])) }}">
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+
+
+
+--
+-- CREATE TABLE Tracker_T
+-- 	(TrackerID						VARCHAR(20)		NOT NULL,
+-- 	 TripID							VARCHAR(50)		NOT NULL,
+-- CONSTRAINT Tracker_PK PRIMARY KEY (TrackerID));
+--
+-- CREATE TABLE Location_T
+-- 	(LocationID						VARCHAR(50)		NOT NULL,
+-- 	 Address1						VARCHAR(50)		NOT NULL,
+-- 	 City							VARCHAR(50)		NOT NULL,
+-- 	 [State]						VARCHAR(50)		NOT NULL,
+-- 	 Zip							VARCHAR(50)		NOT NULL,
+-- 	 Country						VARCHAR(50)		NOT NULL,
+-- CONSTRAINT Location_PK PRIMARY KEY (LocationID));
+--
+-- CREATE TABLE Order_T
+-- 	(OrderID						VARCHAR(50)		NOT NULL,
+-- 	 MerchantID						VARCHAR(50)		NOT NULL,
+-- 	 CustomerID						VARCHAR(50)		NOT NULL,
+-- 	 Quantity						INT				NOT NULL,
+-- 	 PickupID						VARCHAR(50)		NOT NULL,
+-- 	 DestinationID					VARCHAR(50)		NOT NULL,
+-- 	 TrackerID						VARCHAR(20)		NOT NULL,
+-- CONSTRAINT Order_PK PRIMARY KEY (OrderID),
+-- CONSTRAINT Order_FK1 FOREIGN KEY (PickupID) REFERENCES Location_T (LocationID),
+-- CONSTRAINT Order_FK2 FOREIGN KEY (DestinationID) REFERENCES Location_T (LocationID),
+-- CONSTRAINT Order_FK3 FOREIGN KEY (TrackerID) REFERENCES Tracker_T (TrackerID));
+--
+-- CREATE TABLE TripStatus_T
+-- 	(TripStatusSequenceID			VARCHAR(20)		NOT NULL,
+-- 	 TripID							VARCHAR(50)		NOT NULL,
+-- 	 TrackerID						VARCHAR(20)		NOT NULL,
+-- 	 DeviceTemp						FLOAT			NOT NULL,
+-- 	 DateTimeAcquiredUTC			DATETIME		NOT NULL,
+-- 	 ShipmentStatusCode				VARCHAR(10)		NOT NULL,
+-- 	 BatteryPct						INT				NOT NULL,
+-- 	 AlertID						INT				NOT NULL,
+-- 	 AlertValue						FLOAT			NOT NULL,
+-- 	 AlertThresholdLowCritical		FLOAT			NOT NULL,
+-- 	 AlertThresholdHighCritical		FLOAT			NOT NULL,
+-- CONSTRAINT Trip_PK PRIMARY KEY (TripStatusSequenceID),
+-- CONSTRAINT Trip_FK1 FOREIGN KEY (TripID) REFERENCES Order_T (OrderID),
+-- CONSTRAINT Trip_FK2 FOREIGN KEY (TrackerID) REFERENCES Tracker_T (TrackerID));
+
+--ALTER TABLE Employee_T
+--ADD CONSTRAINT Employee_FK1
+--FOREIGN KEY (SupervisorSSN) REFERENCES Employee_T (SSN);
+
+--ALTER TABLE Employee_T
+--ADD CONSTRAINT Employee_FK2
+--FOREIGN KEY (DeptNo) REFERENCES Department_T (DeptNo);

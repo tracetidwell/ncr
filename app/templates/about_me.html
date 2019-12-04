@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	About Me - 
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='styles/about_me.css') }}">
+{% endblock %}
+
+{% block header %}
+  <h1>About Me</h1>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+  			<div class="col-lg-6 col-sm-6">
+  				<div class="thumbnail">
+  					<img src="{{ url_for('.static', filename='about_me/aquarium_family.jpg') }}">
+  					<p>Aquarium for Al's 2nd Birthday</p>
+  				</div>
+  			</div>
+  			 <div class="col-lg-6 col-sm-6">
+  				<div class="thumbnail">
+  					<img src="{{ url_for('.static', filename='about_me/al.jpg') }}">
+  					<p>Al's First Day of School</p>
+  				</div>
+  			</div>
+  		</div>
+
+  		<p>My name is Trace Tidwell, and I am 33 years old. I have been married to my amazing wife, Judith, for almost 7 years now. We have a son, Alister, who 
+      turned two in March. We also have two dogs, MacGyver and Indy, and two cats, Heidi and Bruni. A few years ago I started racing triathlons, so I try to find time each day to train. I have a BS in Mechanical Engineering from Georgia Tech, and I'll be starting my Master's in Computer Science with a Machine Learning focus in August, also at Georgia Tech.</p>
+
+  		<p>Up until about July of last year (2017), I was going to take classes online, and my family was going to try to split time between the United States and Germany (because my wife is German). The living situation in Germany did not work out the way we had hoped, and we were unable to make it happen. Around the same time our next-door neighbors started getting very out of control, and we no longer wanted to raise a family next to them. It had always been a dream of mine to return to Georgia Tech for graduate studies, and since we were no longer planning to go back and forth between the US and Germany, we decided to sell our house, move closer to Atlanta, and begin preparing to apply to graduate school.</p>
+
+  		<p>Because I do not have an undergraduate degree in Computer Science, I needed to take some core courses if I was going to have any chance of being accepted. I enrolled in the Graduate Certificate in Computer Science Foundations at Kennesaw State University, which I am finishing this semester. It consists of 5 courses - Foundations of Programming, Foundations of Computer Architecture and Operating Systems, Data Structures and Algorithms, Database Design, and Mathematical Structures for Computer Science. In order to further increase my knowledge, I am also taking two 4000 level undergraduate courses this semester - Algorithm Analysis and Concepts of Programming Languages. I have applied to both the on-campus and online programs at Georgia Tech, and I am hoping to receive a decision from both within the next 2-3 weeks.</p>
+
+  		<p>Below is a link to my resume, which also links to my LinkedIn and Github pages.</p>
+  		<h2>
+  			<a  href="{{url_for('resume')}}">Resume</a>
+  		</h2>
+{% endblock %}

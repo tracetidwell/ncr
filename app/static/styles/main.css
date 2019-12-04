@@ -1,0 +1,64 @@
+.container {
+  text-align: center;
+}
+
+.row {
+    display: inline-block;
+}
+
+/* .input-group {
+    width: 700px;
+    display: inline-block;
+} */
+
+.input-group {
+    width: 800px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.custom-file-input {
+    width: 800px;
+    height: 30px;
+}
+
+.thumbnail {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 75%;
+      min-height: 75%;
+    }
+}
+
+.form-control {
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* #submit-labels-container {
+   display: table;
+   width: 100%;
+}
+#submit-labels {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+} */
+
+/* .label-select {
+    width: 250px;
+    height: 300px;
+} */
+
+/* select[name="top-labels"] {
+    width: 250px;
+    height: 250px;
+} */

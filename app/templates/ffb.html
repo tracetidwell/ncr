@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Fantasy Football -
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='styles/ffb.css') }}">
+{% endblock %}
+
+{% block header %}
+
+	<div class="jumbotron">
+		<h1>Welcome to tracetidwell.com</h1>
+		<p>I started this site to blog about the regular goings-on in my life, share some triathlon training advice and tools I use to plan my training, and provide examples of my CS projects I'm working on.</p>
+	</div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+  {% if standings != None %}
+    <img style='height: 100%; width: 100%; object-fit: contain' src="data:image/png;base64,{{ standings }}"\>
+  {% endif %}
+
+  {% if top_players_table != None %}
+    {{top_players_table|safe}}
+  {% endif %}
+
+  <select name=positions method="GET" action="/">
+    <option value="{{positions[0]}}" SELECTED>{{positions[0]}}</option>"
+    {% for position in positions[1:] %}
+      <option value="{{position}}" SELECTED>{{position}}</option>"
+    {% endfor %}
+  </select>
+
+  </div>
+
+{% endblock %}

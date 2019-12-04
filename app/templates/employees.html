@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Employees -
+{% endblock %}
+
+{% block header %}
+  <h1>Upload Image</h1>
+{% endblock %}
+
+{% block content %}
+	<!-- <div class="container">
+		<div class="row">
+  			<div class="col-lg-6 col-sm-6">
+  				<div class="thumbnail">
+  					<img src="{{ url_for('.static', filename='about_me/aquarium_family.jpg') }}">
+  					<p>Aquarium for Al's 2nd Birthday</p>
+  				</div>
+  			</div>
+  		</div> -->
+
+	<div class="container">
+
+		<!-- <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
+		   <input id="fileupload" name="myfile" type="file" />
+		   <input type="submit" value="submit" id="submit" />
+		</form> -->
+
+		<form method="POST" enctype="multipart/form-data">
+		  <div class="form-group">
+			<input name="file" type="file" onchange="form.submit()" class="form-control-file" id="exampleFormControlFile1">
+		    <label for="exampleFormControlFile1">Example file input</label>
+		  </div>
+		</form>
+
+		<!-- <form method="POST">
+			<div class="custom-file">
+			  <input type="file" onchange="form.submit()" class="custom-file-input" id="customFile">
+			  <label class="custom-file-label" for="customFile">Choose file</label>
+			</div>
+		</form> -->
+
+{% endblock %}

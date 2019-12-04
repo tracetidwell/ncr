@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Employees -
+{% endblock %}
+
+{% block header %}
+  <h1>Label Selection</h1>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+  			<div class="col-lg-6 col-sm-6">
+  				<div class="thumbnail">
+					<img src="{{ url_for('.static', filename='inventory/{}'.format(filename)) }}">
+  				</div>
+  			</div>
+  		</div>
+
+	<div class="container" id="submit-labels-container">
+	  <form id="submit-labels" method="POST">
+	    <div class="form-group">
+	      <label for="select">Select all labels you would like to apply to this item (hold shift to select more than one):</label>
+	      <select multiple class="form-control" id="select" name="select" size="{{top_matches|length}}">
+			  {% for match in top_matches %}
+				<option value="{{match[0]}}">{{'{}: {:.3f}'.format(match[0], match[1])}}</option>
+			  {% endfor %}
+	      </select>
+		  <label for="input">Input any custom labels you would like to apply to this item, separated by a comma (shoes,boots,cowboy boots)</label>
+		  <input type="text" class="form-control" id="input" name="input">
+		  <input name="labels" type="submit">
+	    </div>
+	  </form>
+	</div>
+
+		<!-- <form method="POST">
+			<div class="label-select">
+				<select name="top-labels" size="{{top_matches|length}}" multiple>
+				  {% for match in top_matches %}
+				    <option value="{{match[0]}}">{{'{}: {:.3f}'.format(match[0], match[1])}}</option>
+				  {% endfor %}
+				</select>
+				<input name="labels" type="submit">
+			</div>
+		</form> -->
+
+
+{% endblock %}
