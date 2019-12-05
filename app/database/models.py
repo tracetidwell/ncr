@@ -37,7 +37,7 @@ class Users_T(db.Model):
 	def add_user(username: str, password: str, firstname: str, lastname: str) -> None:
 
 		db.session.add(Users_T(UserName=username,
-							   PasswordHash=password,
+							   PasswordHash=hashlib.md5(password.encode('utf8')).hexdigest(),
 							   FirstName=firstname,
 							   LastName=lastname))
 

@@ -1,12 +1,15 @@
+CREATE DATABASE ncr;
+
+USE ncr;
+
 CREATE TABLE Inventory_T (
 	ImagePath VARCHAR(50) NOT NULL,
 	Tag VARCHAR(20) NOT NULL,
 	PRIMARY KEY (ImagePath, Tag));
-)
 
 CREATE TABLE Users_T (
 	UserName VARCHAR(50) NOT NULL,
-	PasswordHash VARCHAR(255) NOT NULL,
+	PasswordHash VARCHAR(100) NOT NULL,
 	FirstName VARCHAR(50) NOT NULL,
 	LastName VARCHAR(50) NOT NULL,
 	PRIMARY KEY (UserName));

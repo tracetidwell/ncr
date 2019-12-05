@@ -79,14 +79,24 @@ def index():
 @app.route('/employee_login', methods=['GET', 'POST'])
 def employee_login():
 
-    if request.method == 'POST':
-        return 'please log in'
+    if session.get('logged_in'):
+
+        return redirect(url_for('employees'))
 
     else:
-        username = 'trace'
-        password = 'password'
-        print(models.Users_T.verify_user(username, password))
-        return 'please log in'
+
+        if request.method == 'POST':
+            verified, response = models.Users_T.verify_user(request.form['username'],
+                                                            request.form['password'])
+            if verified:
+                session['logged_in'] = True
+                return redirect(url_for('employees'))
+            else:
+                flash(response)
+                return render_template('employee_login.html')
+
+        else:
+            return render_template('employee_login.html')
 
 
 @app.route('/employees', methods=['GET', 'POST'])
