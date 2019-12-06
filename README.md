@@ -66,7 +66,7 @@ Now we're ready to login. Use:
 `mysql -u root -p`  
 Enter root password  
 
-Here, we will create a new user and give him all privileges. These can be modified to fit personal needs, but for the purpose of this project, all users can have all privileges. Make sure to record the username and password used here, as they will be needed to access the database from the app.  
+Here, we will create a new user and give him all privileges. These can be modified to fit personal needs, but for the purpose of this project, all users can have all privileges. Make sure to record the username and password used here, as they will be needed to access the database from the app. Replace 'newuser' and 'password' below with your chosen username and password.
 `CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';`  
 `GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';`  
 `FLUSH PRIVILEGES;`
@@ -78,6 +78,13 @@ Now we will create the specific database for the project and all necessary table
 
 ## Google Vision API
 
+To begin with, we are using Google Cloud Vision API for object detection and label generation. You will need to have a Google account to use their API. The instructions for gaining access to the API can be found [here](https://cloud.google.com/vision/docs/quickstart-client-libraries). Steps 1-4 must be completed. After 4e, save the JSON file with the API credentials as `app/google_vision_api_creds.json`. Step 4 will be handled in the app itself.
+
 ## App Credentials
 
+In addition to the Google Cloud Vision API credentials, we need to create files with the database credentials and the app secret key.
+
 ## Finally, Run the App!
+
+`pip install -e .`  
+`flask run`
