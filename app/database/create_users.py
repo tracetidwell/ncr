@@ -20,7 +20,7 @@ metadata.reflect(engine)
 base = AutomapBase(metadata=metadata)
 base.prepare()
 
-Users_T = base.classes.Users_T
+Users_T = base.classes.users_t
 
 with open('app/database/users.txt', 'r') as f:
     users_info = f.readlines()

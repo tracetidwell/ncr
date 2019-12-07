@@ -8,7 +8,7 @@ from app.database import db
 
 class Inventory_T(db.Model):
 
-	__table__ = db.Model.metadata.tables['Inventory_T']
+	__table__ = db.Model.metadata.tables['inventory_t']
 
 	def add_items(filename: str, tags: List[str]) -> None:
 
@@ -32,7 +32,7 @@ class Inventory_T(db.Model):
 
 class Users_T(db.Model):
 
-	__table__ = db.Model.metadata.tables['Users_T']
+	__table__ = db.Model.metadata.tables['users_t']
 
 	def add_user(username: str, password: str, firstname: str, lastname: str) -> None:
 
