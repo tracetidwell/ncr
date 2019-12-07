@@ -24,6 +24,11 @@ Once Anaconda is installed, you can create an environment by typing the command 
 
 `conda env create -f environment.yml`
 
+After the environment has been created, type:  
+`conda activate ncr`
+
+You will need to activate the environment before running the app.
+
 ### Pip
 
 To use pip, from the root folder of the project/repo, use the following command from the terminal:
