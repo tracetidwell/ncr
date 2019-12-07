@@ -66,7 +66,7 @@ Now we're ready to login. Use:
 `mysql -u root -p`  
 Enter root password  
 
-Here, we will create a new user and give him all privileges. These can be modified to fit personal needs, but for the purpose of this project, all users can have all privileges. Make sure to record the username and password used here, as they will be needed to access the database from the app. Replace 'newuser' and 'password' below with your chosen username and password.
+Here, we will create a new user and give him all privileges. These can be modified to fit personal needs, but for the purpose of this project, all users can have all privileges. Make sure to record the username and password used here, as they will be needed to access the database from the app. Replace 'newuser' and 'password' below with your chosen username and password.  
 `CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';`  
 `GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';`  
 `FLUSH PRIVILEGES;`
@@ -77,7 +77,7 @@ Now we will create the specific database for the project and all necessary table
 ### Windows
 
 To install MySQL for windows, we need to first download it. You can do that [here](https://dev.mysql.com/downloads/installer/).  
-Open the installer, select 'Developer Default', and click 'Next'. After completing the installation, you will need to setup MySQL. A new screen will open with a 'High Availability' option. Select 'Standalone MySQL Server' and click 'Next'. Click 'Next' on the next two screens until you come to 'Accounts and Roles'. Create a root password along with a new user. You should probably give this user the DB Admin role. Remember this username and password, as you will need to it to connect to the database through the app.  
+Open the installer, select 'Developer Default', and click 'Next'. After completing the installation, you will need to setup MySQL. A new screen will open with a 'High Availability' option. Select 'Standalone MySQL Server' and click 'Next'. Click 'Next' on the next two screens until you come to 'Accounts and Roles'. Create a root password along with a new user. You should probably give this user the DB Admin role. Remember this username and password, as you will need to it to connect to the database through the app. Click next the rest of the way through and then 'Execute' at the end.    
 
 After completing the installation, we need to create the specific databse for the project and all necessary tables. Open a command prompt and 'cd' into the root folder of the project. Then type:   
 `C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql -u root -p`  
@@ -88,13 +88,12 @@ Enter root password
 
 Now that we have created the database and tables, we need to add some users for the app. You need to fill in the provided 'app/database/users.txt' file. The order is  
 `username,password,firstname,lastname`  
-with each user being added on a separate line. The file contains a few sample users to demonstrate. Remove them, and add your own.  
-Open a command terminal from the root of the project and type  
+with each user being added on a separate line. The file contains a few sample users to demonstrate. Remove them, and add your own. Open a command terminal from the root of the project and type:  
 `python app/database/create_users.py`
 
 ## Google Vision API
 
-To begin with, we are using Google Cloud Vision API for object detection and label generation. You will need to have a Google account to use their API. The instructions for gaining access to the API can be found [here](https://cloud.google.com/vision/docs/quickstart-client-libraries). Steps 1-4 must be completed. After 4e, save the JSON file with the API credentials as `app/creds/google_vision_api_creds.json`. Step 5 will be handled in the app itself. Click next the rest of the way through and then 'Execute' at the end.
+To begin with, we are using Google Cloud Vision API for object detection and label generation. You will need to have a Google account to use their API. The instructions for gaining access to the API can be found [here](https://cloud.google.com/vision/docs/quickstart-client-libraries). Steps 1-4 must be completed. After 4e, save the JSON file with the API credentials as `app/creds/google_vision_api_creds.json`. Step 5 will be handled in the app itself.
 
 ## App Credentials
 
@@ -102,7 +101,7 @@ In addition to the Google Cloud Vision API credentials, we need to create files 
 
 ![alt text](readme_images/db_json.png)
 
-Now create a file called `app/creds/secret_key.txt'`. You just need to create a secret for the app to run. This can be pretty much anything.
+Now create a file called `app/creds/secret_key.txt'`. You just need to create a secret key for the app to run. This can be pretty much anything.
 
 ![alt text](readme_images/secret_key.png)
 
