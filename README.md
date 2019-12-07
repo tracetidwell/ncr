@@ -76,9 +76,12 @@ Now we will create the specific database for the project and all necessary table
 
 ### Windows
 
+To install MySQL for windows, we need to first download it. You can do that [here](https://dev.mysql.com/downloads/installer/).  
+Open the installer, select 'Developer Default', and click 'Next'. After completing the installation, you will need to setup MySQL. A new screen will open with a 'High Availability' option. Select 'Standalone MySQL Server' and click next. Click next on the next two screens until you come to 'Accounts and Roles'. Create a root password along with a new user. You should probably give this user the DB Admin role. Remember this username and password, as you will need to it to connect to the database through the app.
+
 ## Google Vision API
 
-To begin with, we are using Google Cloud Vision API for object detection and label generation. You will need to have a Google account to use their API. The instructions for gaining access to the API can be found [here](https://cloud.google.com/vision/docs/quickstart-client-libraries). Steps 1-4 must be completed. After 4e, save the JSON file with the API credentials as `app/google_vision_api_creds.json`. Step 4 will be handled in the app itself.
+To begin with, we are using Google Cloud Vision API for object detection and label generation. You will need to have a Google account to use their API. The instructions for gaining access to the API can be found [here](https://cloud.google.com/vision/docs/quickstart-client-libraries). Steps 1-4 must be completed. After 4e, save the JSON file with the API credentials as `app/google_vision_api_creds.json`. Step 4 will be handled in the app itself. Click next the rest of the way through and then 'Execute' at the end.
 
 ## App Credentials
 
