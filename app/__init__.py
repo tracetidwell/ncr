@@ -22,11 +22,11 @@ from google.cloud.vision import types
 
 
 # Read app secret key from text file
-with open('app/secret_key.txt', 'r') as f:
+with open('app/creds/secret_key.txt', 'r') as f:
     secret_key = f.read().strip()
 
 # Read database credentials from json file
-with open('app/db_creds.json') as json_file:
+with open('app/creds/db_creds.json') as json_file:
     db_creds = json.load(json_file)
 
 # Define paths and file extensions for app
@@ -51,7 +51,7 @@ with app.app_context():
     from app.database import models
 
 # Initialize Google Vision API
-credentials_file = os.path.join(project_root, 'app/google_vision_api_creds.json')
+credentials_file = os.path.join(project_root, 'app/creds/google_vision_api_creds.json')
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_file
 client = vision.ImageAnnotatorClient()
 

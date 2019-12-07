@@ -128,5 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Pretrained word embeddings (for testing purposes)
 glove.6B/
 glove.840B/
+
+# Credentials folder
+app/creds/

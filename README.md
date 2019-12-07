@@ -6,7 +6,7 @@ This repo contains a coding challenge given to me by NCR as part of a job interv
 
 To get started, you will need to first download or clone the repo. To download the repo, click on the green "Clone or download" button shown in the image below.
 
-![alt text](download.png)
+![alt text](readme_images/download.png)
 
 To clone the repo, open a terminal, navigate to the directory where you would like to save the repo, and type:
 
@@ -94,17 +94,17 @@ Open a command terminal from the root of the project and type
 
 ## Google Vision API
 
-To begin with, we are using Google Cloud Vision API for object detection and label generation. You will need to have a Google account to use their API. The instructions for gaining access to the API can be found [here](https://cloud.google.com/vision/docs/quickstart-client-libraries). Steps 1-4 must be completed. After 4e, save the JSON file with the API credentials as `app/google_vision_api_creds.json`. Step 5 will be handled in the app itself. Click next the rest of the way through and then 'Execute' at the end.
+To begin with, we are using Google Cloud Vision API for object detection and label generation. You will need to have a Google account to use their API. The instructions for gaining access to the API can be found [here](https://cloud.google.com/vision/docs/quickstart-client-libraries). Steps 1-4 must be completed. After 4e, save the JSON file with the API credentials as `app/creds/google_vision_api_creds.json`. Step 5 will be handled in the app itself. Click next the rest of the way through and then 'Execute' at the end.
 
 ## App Credentials
 
-In addition to the Google Cloud Vision API credentials, we need to create files with the database credentials and the app secret key. Create a file called 'app/db_creds.json'. In the file, place the following json, with the username and password you created for the database (this can be the root, but I recommend using the admin database user you created).
+In addition to the Google Cloud Vision API credentials, we need to create files with the database credentials and the app secret key. Create a file called `app/creds/db_creds.json`. In the file, place the following json, with the username and password you created for the database (this can be the root, but I recommend using the admin database user you created).
 
-![alt text](db_json.png)
+![alt text](readme_images/db_json.png)
 
-Now create a file called 'app/secret_key.txt'. You just need to create a secret for the app to run. This can be pretty much anything.
+Now create a file called `app/creds/secret_key.txt'`. You just need to create a secret for the app to run. This can be pretty much anything.
 
-![alt text](secret_key.png)
+![alt text](readme_images/secret_key.png)
 
 ## Finally, Run the App!
 

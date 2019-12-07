@@ -7,7 +7,7 @@ from sqlalchemy import MetaData
 from sqlalchemy.ext.automap import automap_base as AutomapBase
 
 
-with open('app/db_creds.json') as json_file:
+with open('app/creds/db_creds.json') as json_file:
     db_creds = json.load(json_file)
 
 engine = sa.create_engine(f"mysql+pymysql://{db_creds['username']}:{db_creds['password']}@localhost/ncr")
