@@ -46,6 +46,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = \
 
 # Initialize database
 with app.app_context():
+
     db.init_app(app)
     db.Model.metadata.reflect(db.engine)
     from app.database import models
@@ -63,6 +64,10 @@ def allowed_file(filename: str) -> bool:
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
+    session['logged_in'] = False
+    print(session)
+    print(session.permanent)
+
     if request.method == 'POST':
         tag = request.form['input']
 
@@ -78,6 +83,9 @@ def index():
 
 @app.route('/employee_login', methods=['GET', 'POST'])
 def employee_login():
+
+    print(session)
+    print(session.permanent)
 
     if session.get('logged_in'):
 
@@ -108,17 +116,21 @@ def employees():
 
             # check if the post request has the file part
             if 'file' not in request.files:
+
                 flash('No file part')
                 return redirect(request.url)
+
             file = request.files['file']
             # if user does not select file, browser also
             # submit an empty part without filename
 
             if file.filename == '':
+
                 flash('No selected file')
                 return redirect(request.url)
 
             if file and allowed_file(file.filename):
+
                 filename = secure_filename(file.filename)
                 filename = f'{uuid.uuid1()}.jpg'
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
