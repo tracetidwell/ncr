@@ -23,8 +23,8 @@
 }
 
 .thumbnail {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     position: relative;
     overflow: hidden;
 }
@@ -33,6 +33,26 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 75%;
+  min-height: 75%;
+}
+
+.col-lg-4 {
+    vertical-align: middle;
+}
+
+.large_thumbnail {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.large_thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   min-width: 75%;
   min-height: 75%;
