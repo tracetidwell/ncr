@@ -27,14 +27,15 @@
     height: 400px;
     position: relative;
     overflow: hidden;
-    img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 75%;
-      min-height: 75%;
-    }
+}
+
+.thumbnail img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 75%;
+  min-height: 75%;
 }
 
 .form-control {

@@ -10,15 +10,32 @@
 			vertical-align: middle;
 		}
 
+		.large_thumbnail {
+		    width: 800px;
+		    height: 400px;
+		    position: relative;
+		    overflow: hidden;
+		}
+
+		.large_thumbnail img {
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(-50%, -50%);
+		  min-width: 75%;
+		  min-height: 75%;
+		}
+
 		.thumbnail {
 			position: relative;
 		}
-
 		.thumbnail img {
-			margin: 0;
-   			position: absolute;
-   			top: 50%;                        
-   			transform: translate(0, -50%)
+		  position: absolute;
+  		  left: 50%;
+  		  top: 50%;
+  		  transform: translate(-50%, -50%);
+  		  min-width: 75%;
+  		  min-height: 75%;
 		}
 
 	</style>
@@ -31,6 +48,14 @@
 		<h1>Welcome to Charitable Giving</h1>
 		<p>We are a thrift store whose entire inventory is made up donated items. You can browse all of our in-stock items, or you can search for items
 			by typing a keyword into the search box below. If you would like to make a donation, please come visit us at 789 Giving St., Anytown, GA 12345.</p>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="large_thumbnail">
+				<img src="{{ url_for('.static', filename='index/thrift_store.jpg') }}">
+			</div>
+		</div>
 	</div>
 
 {% endblock %}

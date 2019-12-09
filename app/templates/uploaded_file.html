@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+
 	<div class="container">
 		<div class="row">
   			<div class="col-lg-6 col-sm-6">
@@ -33,17 +34,5 @@
 	    </div>
 	  </form>
 	</div>
-
-		<!-- <form method="POST">
-			<div class="label-select">
-				<select name="top-labels" size="{{top_matches|length}}" multiple>
-				  {% for match in top_matches %}
-				    <option value="{{match[0]}}">{{'{}: {:.3f}'.format(match[0], match[1])}}</option>
-				  {% endfor %}
-				</select>
-				<input name="labels" type="submit">
-			</div>
-		</form> -->
-
 
 {% endblock %}

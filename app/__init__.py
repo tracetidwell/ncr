@@ -64,10 +64,6 @@ def allowed_file(filename: str) -> bool:
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-    session['logged_in'] = False
-    print(session)
-    print(session.permanent)
-
     if request.method == 'POST':
         tag = request.form['input']
 
@@ -83,9 +79,6 @@ def index():
 
 @app.route('/employee_login', methods=['GET', 'POST'])
 def employee_login():
-
-    print(session)
-    print(session.permanent)
 
     if session.get('logged_in'):
 
@@ -105,6 +98,14 @@ def employee_login():
 
         else:
             return render_template('employee_login.html')
+
+
+@app.route('/employee_logout')
+def employee_logout():
+
+    session['logged_in'] = False
+
+    return render_template('employee_login.html')
 
 
 @app.route('/employees', methods=['GET', 'POST'])
